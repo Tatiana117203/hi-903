@@ -5,4 +5,9 @@
   <component name="PhpCodeSniffer">
     <phpcs_settings_migrated />
   </component>
+  <component name="PhpInterpreters">
+    <interpreters>
+      <interpreter id="25bd29d3-bbe0-4c36-b022-897467dd3a28" name="PHP" home="C:\Program Files\JetBrains\PhpStorm 2019.1.2\bin\phpstorm64.exe" debugger_id="php.debugger.XDebug" />
+    </interpreters>
+  </component>
 </application>
