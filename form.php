@@ -1,4 +1,11 @@
 <?php
+
+$result = '';
+$operand1 = '';
+$operand2 = '';
+$operator = '';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
 $parametrs = ['operand1', 'operator', 'operand2'];
 foreach ($parametrs as $parameter) {
     if (empty($_POST['operand1'])) {
@@ -25,4 +32,6 @@ switch ($operator) {
     default:
         die('неверный оператор' . $operator);
 }
-echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $result;
+// echo $operand1 . ' ' . $operator . ' ' . $operand2 . ' = ' . $result;
+}
+include 'html php.php';
