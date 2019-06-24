@@ -6,8 +6,8 @@ function saveUser(string $firstname, string $lastname, string $email, string $pa
     insert into users (firstname, lastname, email, password)
     values (:firstname, :lastname, :email, :password)
       ');
-    $query->bindValue('first_name', $firstname);
-    $query->bindValue('last_name', $lastname);
+    $query->bindValue('firstname', $firstname);
+    $query->bindValue('lastname', $lastname);
     $query->bindValue('email' , $email);
     $query->bindValue('password' , $password);
     $query->execute();
