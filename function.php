@@ -1,12 +1,16 @@
 <?php
-function saveUser(string $first_name, string $last_name, string $email, string $password): bool
+function saveUser(string $firstname, string $lastname, string $email, string $password): bool
 {
-    $file = fopen('users.txt', 'a');
-    if ($file === false) {
-        return false;
-    }
-    $row = sprintf("%s\t%s\t%s\t%s\n" , $first_name,  $last_name, $email,  $password);
-    fputs($file, $row);
-    fclose($file);
+    $pdo = new PDO('mysql:host=localhost;dbname=test123', 'root' , 'root');
+    $query = $pdo->prepare ('
+    insert into users (firstname, lastname, email, password)
+    values (:firstname, :lastname, :email, :password)
+      ');
+    $query->bindValue('first_name', $firstname);
+    $query->bindValue('last_name', $lastname);
+    $query->bindValue('email' , $email);
+    $query->bindValue('password' , $password);
+    $query->execute();
+
     return true;
 }
